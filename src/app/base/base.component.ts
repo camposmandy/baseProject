@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppBaseComponent {
   title = 'Academia Angular';
+
+  minhaCor;
+
+  fontSize;
+
+  pegaCor(cor) {
+    this.minhaCor = cor;
+  }
+
+  onFontChanged(font) {
+    this.fontSize = font;
+  }
 }
