@@ -2,13 +2,10 @@
   <h1>Bem-vindas! {{title}}</h1>
 </div>
 
-<app-accessibility
-  (corSelecionada)="pegaCor($event)"
-  (fontChanged)="onFontChanged($event)"
-></app-accessibility>
+<div>
+  <a routerLink="/components">Componentes</a>
+  <a routerLink="/services">Serviços</a>
+  <button (click)="navigateTo(['books'])">Livros</button>
+</div>
 
-<app-text
-  [title]="'Bliblilbi'"
-  [cor]="minhaCor"
-  [fontSize]="fontSize"
-></app-text>
+<router-outlet></router-outlet>

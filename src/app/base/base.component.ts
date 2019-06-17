@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-base',
@@ -8,15 +9,9 @@ import { Component } from '@angular/core';
 export class AppBaseComponent {
   title = 'Academia Angular';
 
-  minhaCor;
+  constructor(private router: Router) { }
 
-  fontSize;
-
-  pegaCor(cor) {
-    this.minhaCor = cor;
-  }
-
-  onFontChanged(font) {
-    this.fontSize = font;
+  navigateTo(path: string[]) {
+    this.router.navigate(path);
   }
 }
