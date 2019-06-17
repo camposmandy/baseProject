@@ -1,0 +1,21 @@
+.navegacao {
+  list-style: none;
+  display:flex;
+}
+
+.link {
+  padding: 20px;
+}
+
+.link a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+.botao {
+  background-color: brown;
+  border-radius: 2px;
+  text-transform: uppercase;
+
+}

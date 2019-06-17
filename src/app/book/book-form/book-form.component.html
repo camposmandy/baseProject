@@ -1,0 +1,28 @@
+<form (ngSubmit)= "onSubmit(bookForm)" #bookForm="ngForm">
+  <div>
+    <label>Título</label>
+    <input type="text" [(ngModel)]="book.title" name="title" [(ngModel)]="book.title" #title="ngModel" required/>
+    <span *ngIf="title.touched && !title.valid">Informe um título</span>
+  </div>
+  <div>
+    <label>Autor</label>
+    <input type="text" [(ngModel)]="book.author" name="author" #author="ngModel" required/>
+    <span *ngIf="author.touched && !author.valid">Informe um autor</span>
+  </div>
+  <div>
+    <label>Editora</label>
+    <input type="text" [(ngModel)]="book.publisher" name="publisher" #publisher="ngModel" required/>
+    <span *ngIf="publisher.touched && !publisher.valid">Informe uma editora</span>
+  </div>
+    <div>
+      <label>Data de Lançamento</label>
+      <input type="date" [(ngModel)]="book.relaseDate" name="relaseDate" #relaseDate="ngModel" required/>
+      <span *ngIf="relaseDate.touched && !relaseDate.valid">Informe uma data</span>
+    </div>
+    <div>
+      <label>Valor</label>
+      <input type="number" [(ngModel)]="book.value" name="value" #value="ngModel" required/>
+      <span *ngIf="value.touched && !value.valid">Informe um valor</span>
+    </div>
+    <button type="submit" [disabled]>Adicionar</button>
+</form>
