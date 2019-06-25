@@ -9,10 +9,9 @@ import { Router } from '@angular/router';
 export class AppBaseComponent {
   title = 'Academia Angular';
 
-  constructor (private router: Router) {}
+  constructor(private router: Router) { }
 
-  navigateTo (path: any []) {
+  navigateTo(path: string[]) {
     this.router.navigate(path);
   }
 }
-

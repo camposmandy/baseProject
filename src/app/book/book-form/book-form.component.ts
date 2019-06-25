@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// tslint:disable-next-line: import-spacing
-import { Book } from  '../models/book.model';
+import { Book } from '../models/book.model';
+import { BooKService } from '../services/book.service';
 import { NgForm } from '@angular/forms';
-import { BookService } from '../book-service.service';
 
 @Component({
   selector: 'app-book-form',
@@ -14,10 +13,9 @@ export class BookFormComponent implements OnInit {
   book: Book;
 
   ngOnInit() {
-    this.book = new Book ();
+    this.book = new Book();
   }
-
-  constructor (public bookService: BookService) {}
+  constructor(public bookService: BooKService) { }
 
   public onSubmit(bookForm: NgForm) {
     this.bookService.addBook(bookForm.value);

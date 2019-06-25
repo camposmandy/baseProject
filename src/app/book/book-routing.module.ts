@@ -1,23 +1,24 @@
-import { BookListsComponent } from './book-lists/book-lists.component';
-import { BookFormComponent } from './book-form/book-form.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
+import { Routes, RouterModule } from '@angular/router';
+import { BookFormComponent } from './book-form/book-form.component';
+import { BooksListComponent } from './books-list/books-list.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookFormReactiveComponent } from './book-form-reactive/book-form-reactive.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: BookListsComponent,
+    component: BooksListComponent,
     children: [
       { path: 'new', component: BookFormComponent },
-      { path: 'id/detail', component: BookDetailComponent }
+      { path: 'new-reactive', component: BookFormReactiveComponent },
+      { path: ':id/detail', component: BookDetailComponent }
     ]
   }
 ];
 
-@NgModule ({
-  imports: [ RouterModule.forChild(routes)],
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class BookRoutingModule { }

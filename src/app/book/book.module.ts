@@ -1,33 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { BooksListComponent } from './books-list/books-list.component';
 import { BookFormComponent } from './book-form/book-form.component';
-import { BookListsComponent } from './book-lists/book-lists.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookServiceService } from './book-service.service';
-import { BookRoutingModule} from './book-routing.module';
-import { FormsModule } from '@angular/forms'
+import { BookRoutingModule } from './book-routing.module';
+import { BooKService } from './services/book.service';
+import { BookFormReactiveComponent } from './book-form-reactive/book-form-reactive.component';
 
 @NgModule({
-  declarations: [
-    BookFormComponent,
-    BookListsComponent,
-    BookDetailComponent,
-  ],
-
   imports: [
     CommonModule,
     BookRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
-
-  exports: [
+  declarations: [
+    BooksListComponent,
     BookFormComponent,
-     BookListsComponent,
-     BookDetailComponent
+    BookDetailComponent,
+    BookFormReactiveComponent
   ],
-
   providers: [
-    BookServiceService,
+    BooKService
   ]
 })
 export class BookModule { }

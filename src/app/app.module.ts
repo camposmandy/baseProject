@@ -1,33 +1,27 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppBaseComponent } from './base/base.component';
-import { ModuleOneModule } from './module-one/module-one.module';
-import { ModuleTwoModule } from './module-two/module-two.module';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ComponentClassComponent } from './module-one/component-class/component-class.component';
-import { BookModule } from './book/book.module';
-
+import { ComponentClassModule } from './component-class/component-class.module';
+import { ServiceClassModule } from './service-class/service-class.module';
+import { ToDoComponent } from './to-do/to-do.component';
 
 @NgModule({
   declarations: [
     AppBaseComponent,
     NotFoundComponent,
+    ToDoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    ModuleOneModule,
-    ModuleTwoModule,
+    ComponentClassModule,
+    ServiceClassModule,
+    FormsModule
   ],
-
-  exports: [
-    AppBaseComponent,
-    NotFoundComponent,
-  ],
-
   bootstrap: [AppBaseComponent]
 })
 export class AppModule { }

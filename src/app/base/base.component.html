@@ -1,34 +1,12 @@
-<div style="text-align:center">
-  <h1>Bem-vindas! {{title}}</h1>
+<div style="text-align:center; color: #a66a6a">
+  <h1>Bem-vindas! <br> {{title}}</h1>
 </div>
 
-<ul class="navegacao">
-  <li class="link">
-    <a routerLink="/component">
-      Componentes
-    </a>
-  </li>
-  <li class="link">
-    <a routerLink="/services">
-      Serviços
-    </a>
-  </li>
-  <li class="link">
-    <button (click)="navigateTo(['books'])">
-      Livros
-    </button>
-  </li>
-</ul>
-
-<!-- <a routerLink="/component">
-  Componentes
-</a> <br>
-
-<a routerLink="/services">
-  Serviços
-</a> <br>
-
-<button (click)="navigateTo(['books'])">Livros
-</button><br> -->
+<div class="navegacao">
+  <a class="link" routerLink="/components">Componentes</a>
+  <a class="link"  routerLink="/services">Serviços</a>
+  <a class="link" routerLink="/ToDos">ToDos</a>
+  <button class="botao" (click)="navigateTo(['books'])">Livros</button>
+</div>
 
 <router-outlet></router-outlet>
